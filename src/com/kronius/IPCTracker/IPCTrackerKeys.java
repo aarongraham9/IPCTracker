@@ -3,7 +3,7 @@ package com.kronius.IPCTracker;
 public class IPCTrackerKeys {
 	public static class Strings{
 		public static final String AppName = "IPC Tracker";
-		public static final String AppNameFull = "IPC Tracker for Axis & Allies: Summer 1942";
+		public static final String AppNameFull = "IPC Tracker for Axis & Allies: Spring 1942";
 		public static final String ApplicationVersion = "1.0"; 
 		
 		public static final String SovietUnion = "Soviet Union";

@@ -155,6 +155,7 @@ public class IPCTrackerGui implements ActionListener{
 	    lblVictoryCondition = new JLabel(IPCTrackerKeys.VictoryStrings.VictoryCondition);
 	    
 	    rdioBtnVictoryConditionNine = new JRadioButton(IPCTrackerKeys.VictoryStrings.VictoryConditionNine);
+	    rdioBtnVictoryConditionNine.setSelected(true);
 	    rdioBtnVictoryConditionTwelve = new JRadioButton(IPCTrackerKeys.VictoryStrings.VictoryConditionTwelve);
 	    
 	    //btnGrpVictoryCities = new ButtonGroup();
