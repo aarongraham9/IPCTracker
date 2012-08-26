@@ -1,0 +1,5 @@
+Colums for axis and allies with radio buttons for each city.
+Radio buttons for 9 / 12 city victory.
+Button for victory check.
+Handle "Enter Return" key to run update method.
+Actually save in folder that dialogue points to.
