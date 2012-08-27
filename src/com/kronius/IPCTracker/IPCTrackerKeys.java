@@ -1,6 +1,10 @@
 package com.kronius.IPCTracker;
 
 public class IPCTrackerKeys {
+	
+	//TODO Change for production builds
+	public static final boolean DEBUG_STATUS = true;
+	
 	public static class Strings{
 		public static final String AppName = "IPC Tracker";
 		public static final String AppNameFull = "IPC Tracker for Axis & Allies: Spring 1942";
