@@ -6,3 +6,4 @@ Handle "Enter Return" key to run update method.
 Actually save in folder that dialogue points to.
 
 Completed in version 2.0.0.0:
+Disabled Re-Sizing.

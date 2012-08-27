@@ -634,6 +634,7 @@ public class IPCTrackerGui implements ActionListener{
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.pack(); //Adjusts panel to components for display
 		f.setVisible(true);
+		f.setResizable (false);
         logger.setLogName("IPCTracker.log");
         logger.log(this.getClass().getName(), "Frame Loaded");
 	}
