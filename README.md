@@ -1,4 +1,4 @@
-IPCTracker - ICP Tracker for Axis & Allies: Spring 1942
+IPCTracker - IPC Tracker for Axis & Allies: Spring 1942
 
 To obtain the latest version of ICPTracker, always check out http://github.com/aarongraham9/IPCTracker
 
