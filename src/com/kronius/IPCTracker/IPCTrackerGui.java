@@ -303,7 +303,6 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
             logger.log("Opening: " + file.getName() + ".");
             filePath = file.getName();
         } else {
-        	logger.log("Save command cancelled by user.");
         	logger.log("Load command cancelled by user.");
             return;
         }
