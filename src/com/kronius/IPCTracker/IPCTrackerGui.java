@@ -16,7 +16,7 @@ import java.util.List;
 
 import net.miginfocom.swing.MigLayout;
 
-public class IPCTrackerGui implements ActionListener{
+public class IPCTrackerGui implements ActionListener, KeyListener{
 	
 	private static String OS;
 	
@@ -199,9 +199,17 @@ public class IPCTrackerGui implements ActionListener{
         //Add Button listener
         btnUpdate.addActionListener(this);
         btnVictoryCheck.addActionListener(this);
+        
+        //Add Key Listeners
+        tfSU.addKeyListener(this);
+        tfGer.addKeyListener(this);
+        tfUK.addKeyListener(this);
+        tfJap.addKeyListener(this);
+        tfUS.addKeyListener(this);
 	}
 	
 	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btnUpdate){
 			logger.log(this.getClass().getName(), "Update Button");
@@ -228,6 +236,45 @@ public class IPCTrackerGui implements ActionListener{
 		}
 	}
 	
+	
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		// Ignore
+	}
+
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// Ignore
+	}
+
+
+	@Override
+	public void keyTyped(KeyEvent key) {
+
+		if(key.getKeyChar() == '\n'){
+			String selectedTextAreaName = "";
+			
+			if(key.getSource() == tfSU){
+				selectedTextAreaName = "tfSU";
+			} else if(key.getSource() == tfGer){
+				selectedTextAreaName = "tfGer";
+			} else if(key.getSource() == tfUK){
+				selectedTextAreaName = "tfUK";
+			} else if(key.getSource() == tfJap){
+				selectedTextAreaName = "tfJap";
+			} else if(key.getSource() == tfUS){
+				selectedTextAreaName = "tfUS";
+			} else {
+				selectedTextAreaName = "Unknown Text Field";
+			}
+			
+			logger.log(this.getClass().getName(), "Update via Enter / Return Key from Text Field: " + selectedTextAreaName);
+			
+			updateTotals();
+		}
+	}
+
 	
 	private void createNewGame() {
 		

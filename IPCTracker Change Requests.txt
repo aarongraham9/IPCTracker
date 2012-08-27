@@ -2,8 +2,9 @@ To-Do:
 Columns for axis and allies with radio buttons for each city.
 Radio buttons for 9 / 12 city victory.
 Button for victory check.
-Handle "Enter Return" key to run update method.
+Move some logging to only be during "DEBUG_STATUS = true".
 Actually save in folder that dialogue points to.
 
 Completed in version 2.0.0.0:
 Disabled Re-Sizing.
+Handle "Enter Return" key to run update method.
