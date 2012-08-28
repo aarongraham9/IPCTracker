@@ -747,6 +747,8 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		BasicLogger osLogger = BasicLogger.getInstance();
 		osLogger.setLogName("IPCTracker.log");
 
+		osLogger.log("Application Version: " + IPCTrackerKeys.Strings.ApplicationVersion);
+		
 		OS = System.getProperty("os.name");
 		
 		if(OS.equals(IPCTrackerKeys.OS.Mac)){
@@ -765,9 +767,9 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 			JOptionPane.showMessageDialog(new JFrame(), IPCTrackerKeys.OS.OSNotSupportedMessage, IPCTrackerKeys.OS.OSNotSupportedMessageTitle, 
 					0, new ImageIcon("res" + File.separator + "error.png"));
 			
-			System.exit(0);
+			System.exit(0); 
 		}
-				
+		
 		IPCTrackerGui gui = new IPCTrackerGui();
         gui.launchFrame();
 	}

@@ -8,7 +8,9 @@ public class IPCTrackerKeys {
 	public static class Strings{
 		public static final String AppName = "IPC Tracker";
 		public static final String AppNameFull = "IPC Tracker for Axis & Allies: Spring 1942";
-		public static final String ApplicationVersion = "1.0"; 
+		
+		//TODO Change for production builds
+		public static final String ApplicationVersion = "2.0.0.0 Dev"; 
 		
 		public static final String SovietUnion = "Soviet Union";
 		public static final String Germany = "Germany";
