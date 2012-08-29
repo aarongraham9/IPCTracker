@@ -301,7 +301,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             logger.log("Opening: " + file.getName() + ".");
-            filePath = file.getName();
+            filePath = file.getPath().trim();
         } else {
         	logger.log("Load command cancelled by user.");
             return;
@@ -382,7 +382,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             logger.log("Saving: " + file.getName() + ".");
-            filePath = file.getName();
+            filePath = file.getPath().trim();
         } else {
             logger.log("Save command cancelled by user.");
             return;
