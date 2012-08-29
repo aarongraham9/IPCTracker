@@ -19,6 +19,7 @@ import net.miginfocom.swing.MigLayout;
 public class IPCTrackerGui implements ActionListener, KeyListener{
 	
 	private static String OS;
+	private static String CLASS_NAME;
 	
 	private JFrame f;
 	private static Image winsowsApplicationIcon;
@@ -212,26 +213,26 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btnUpdate){
-			logger.log(this.getClass().getName(), "Update Button");
+			logger.log(CLASS_NAME, "Update Button");
 			updateTotals();
 		}else if(e.getSource() == mnuItemNew){
-			logger.log(this.getClass().getName(), "New Game Button");
+			logger.log(CLASS_NAME, "New Game Button");
 			createNewGame();
 		}else if(e.getSource() == mnuItemOpen){
-			logger.log(this.getClass().getName(), "Open Button");
+			logger.log(CLASS_NAME, "Open Button");
 			loadState();
 		}else if(e.getSource() == mnuItemSave){
-			logger.log(this.getClass().getName(), "Save Button");
+			logger.log(CLASS_NAME, "Save Button");
 			saveState();
 		}else if (e.getSource() == mnuItemQuit){
-			logger.log(this.getClass().getName(), "Quitting via menu Button");
+			logger.log(CLASS_NAME, "Quitting via menu Button");
 			System.exit(0);
 		}else if (e.getSource() == mnuItemAbout){
-			logger.log(this.getClass().getName(), "Showing About Message");
+			logger.log(CLASS_NAME, "Showing About Message");
 			JOptionPane.showMessageDialog(f, IPCTrackerKeys.Strings.AboutMessage, IPCTrackerKeys.Strings.AboutMessageTitle, 
 					0, new ImageIcon("res" + File.separator + "Illuminati.png"));
 		}else{
-			logger.log(this.getClass().getName(), "Showing Unknown event Message" + e.getSource().toString());
+			logger.log(CLASS_NAME, "Showing Unknown event Message" + e.getSource().toString());
 			JOptionPane.showMessageDialog(f, "Unknown event: " + e.getSource().toString(), "Error", 0, new ImageIcon("res" + File.separator + "error.png"));
 		}
 	}
@@ -269,7 +270,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				selectedTextAreaName = "Unknown Text Field";
 			}
 			
-			logger.log(this.getClass().getName(), "Update via Enter / Return Key from Text Field: " + selectedTextAreaName);
+			logger.log(CLASS_NAME, "Update via Enter / Return Key from Text Field: " + selectedTextAreaName);
 			
 			updateTotals();
 		}
@@ -300,8 +301,8 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
-            logger.log("Opening: " + file.getName() + ".");
             filePath = file.getPath().trim();
+            logger.log(CLASS_NAME, "Opening: " + filePath + ".");
         } else {
         	logger.log("Load command cancelled by user.");
             return;
@@ -381,10 +382,16 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
-            logger.log("Saving: " + file.getName() + ".");
+            
             filePath = file.getPath().trim();
+            
+            if(!filePath.endsWith(".ipctracker")){
+    			filePath = filePath + ".ipctracker";
+    		}
+            
+            logger.log(CLASS_NAME, "Saving: " + filePath + ".");
         } else {
-            logger.log("Save command cancelled by user.");
+            logger.log(CLASS_NAME, "Save command cancelled by user.");
             return;
         }
 		
@@ -481,11 +488,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				
 		FileOutputStream fos = null;
 		ObjectOutputStream out = null;
-		
-		if(!filePath.endsWith(".ipctracker")){
-			filePath = filePath + ".ipctracker";
-		}
-		
+				
 		try
 		{
 			fos = new FileOutputStream(filePath);
@@ -509,27 +512,27 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		String UStext = tfUS.getText().trim(); 
 		
 		if(!SUtext.isEmpty()){
-			logger.log(this.getClass().getName(), "Attempting to update SU with: \"" + SUtext + "\"");
+			logger.log(CLASS_NAME, "Attempting to update SU with: \"" + SUtext + "\"");
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.SU, SUtext);
 		}
 		
 		if(!Gertext.isEmpty()){
-			logger.log(this.getClass().getName(), "Attempting to update Ger with: \"" + Gertext + "\"");
+			logger.log(CLASS_NAME, "Attempting to update Ger with: \"" + Gertext + "\"");
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.Ger, Gertext);
 		}
 		
 		if(!UKtext.isEmpty()){
-			logger.log(this.getClass().getName(), "Attempting to update UK with: \"" + UKtext + "\"");
+			logger.log(CLASS_NAME, "Attempting to update UK with: \"" + UKtext + "\"");
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.UK, UKtext);
 		}
 		
 		if(!Japtext.isEmpty()){
-			logger.log(this.getClass().getName(), "Attempting to update Jap with: \"" + Japtext + "\"");
+			logger.log(CLASS_NAME, "Attempting to update Jap with: \"" + Japtext + "\"");
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.Jap, Japtext);
 		}
 		
 		if(!UStext.isEmpty()){
-			logger.log(this.getClass().getName(), "Attempting to update US with: \"" + UStext + "\"");
+			logger.log(CLASS_NAME, "Attempting to update US with: \"" + UStext + "\"");
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.US, UStext);
 		}
 	}
@@ -541,26 +544,26 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		
 		switch(c){
 			case '+': 
-				logger.log(this.getClass().getName(), "Adding");
+				logger.log(CLASS_NAME, "Adding");
 				addition(countryCode, Integer.parseInt(updateText.substring(1, updateText.length())));
 				break;
 			case '-': 
-				logger.log(this.getClass().getName(), "Subtracting");
+				logger.log(CLASS_NAME, "Subtracting");
 				subtraction(countryCode, Integer.parseInt(updateText.substring(1, updateText.length())));
 				break;
 			default :
-				logger.log(this.getClass().getName(), "Adding (Without Operator)");
+				logger.log(CLASS_NAME, "Adding (Without Operator)");
 				addition(countryCode, Integer.parseInt(updateText));
 				break;
 		}
 	}
 		
 	private void addition(int countryCode, int numberToAdd){
-		logger.log(this.getClass().getName(), "Add");
+		logger.log(CLASS_NAME, "Add");
 		
 		switch(countryCode){
 			case IPCTrackerKeys.CountryCodes.SU:
-				logger.log(this.getClass().getName(), "Adding: \"" + numberToAdd + "\" to SU");
+				logger.log(CLASS_NAME, "Adding: \"" + numberToAdd + "\" to SU");
 				int currentTotalSU = Integer.parseInt(lblTotalSU.getText().substring(7 , lblTotalSU.getText().length()));
 				int newTotalSU = currentTotalSU + numberToAdd;
 				tfSU.setText("");
@@ -568,7 +571,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalSU.setText(IPCTrackerKeys.Strings.Total + newTotalSU);
 				break;
 			case IPCTrackerKeys.CountryCodes.Ger:
-				logger.log(this.getClass().getName(), "Adding: \"" + numberToAdd + "\" to Ger");
+				logger.log(CLASS_NAME, "Adding: \"" + numberToAdd + "\" to Ger");
 				int currentTotalGer = Integer.parseInt(lblTotalGer.getText().substring(7 , lblTotalGer.getText().length()));
 				int newTotalGer = currentTotalGer + numberToAdd;
 				tfGer.setText("");
@@ -576,7 +579,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalGer.setText(IPCTrackerKeys.Strings.Total + newTotalGer);
 				break;
 			case IPCTrackerKeys.CountryCodes.UK:
-				logger.log(this.getClass().getName(), "Adding: \"" + numberToAdd + "\" to UK");
+				logger.log(CLASS_NAME, "Adding: \"" + numberToAdd + "\" to UK");
 				int currentTotalUK = Integer.parseInt(lblTotalUK.getText().substring(7 , lblTotalUK.getText().length()));
 				int newTotalUK = currentTotalUK + numberToAdd;
 				tfUK.setText("");
@@ -584,7 +587,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalUK.setText(IPCTrackerKeys.Strings.Total + newTotalUK);
 				break;
 			case IPCTrackerKeys.CountryCodes.Jap:
-				logger.log(this.getClass().getName(), "Adding: \"" + numberToAdd + "\" to Jap");
+				logger.log(CLASS_NAME, "Adding: \"" + numberToAdd + "\" to Jap");
 				int currentTotalJap = Integer.parseInt(lblTotalJap.getText().substring(7 , lblTotalJap.getText().length()));
 				int newTotalJap = currentTotalJap + numberToAdd;
 				tfJap.setText("");
@@ -592,7 +595,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalJap.setText(IPCTrackerKeys.Strings.Total + newTotalJap);
 				break;
 			case IPCTrackerKeys.CountryCodes.US:
-				logger.log(this.getClass().getName(), "Adding: \"" + numberToAdd + "\" to US");
+				logger.log(CLASS_NAME, "Adding: \"" + numberToAdd + "\" to US");
 				int currentTotalUS = Integer.parseInt(lblTotalUS.getText().substring(7 , lblTotalUS.getText().length()));
 				int newTotalUS = currentTotalUS + numberToAdd;
 				tfUS.setText("");
@@ -600,18 +603,18 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalUS.setText(IPCTrackerKeys.Strings.Total + newTotalUS);
 				break;
 			default:
-				logger.log(this.getClass().getName(), "Country Code: \"" + countryCode + "\" does not exist.");
+				logger.log(CLASS_NAME, "Country Code: \"" + countryCode + "\" does not exist.");
 				break;
 		}
 	}
 	
 	
 	private void subtraction(int countryCode, int numberToMinus){
-		logger.log(this.getClass().getName(), "Minus");
+		logger.log(CLASS_NAME, "Minus");
 		
 		switch(countryCode){
 			case IPCTrackerKeys.CountryCodes.SU:
-				logger.log(this.getClass().getName(), "Subtracting: \"" + numberToMinus + "\" from SU");
+				logger.log(CLASS_NAME, "Subtracting: \"" + numberToMinus + "\" from SU");
 				int currentTotalSU = Integer.parseInt(lblTotalSU.getText().substring(7 , lblTotalSU.getText().length()));
 				int newTotalSU = currentTotalSU - numberToMinus;
 				tfSU.setText("");
@@ -619,7 +622,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalSU.setText(IPCTrackerKeys.Strings.Total + newTotalSU);
 				break;
 			case IPCTrackerKeys.CountryCodes.Ger:
-				logger.log(this.getClass().getName(), "Subtracting: \"" + numberToMinus + "\" from Ger");
+				logger.log(CLASS_NAME, "Subtracting: \"" + numberToMinus + "\" from Ger");
 				int currentTotalGer = Integer.parseInt(lblTotalGer.getText().substring(7 , lblTotalGer.getText().length()));
 				int newTotalGer = currentTotalGer - numberToMinus;
 				tfGer.setText("");
@@ -627,7 +630,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalGer.setText(IPCTrackerKeys.Strings.Total + newTotalGer);
 				break;
 			case IPCTrackerKeys.CountryCodes.UK:
-				logger.log(this.getClass().getName(), "Subtracting: \"" + numberToMinus + "\" from UK");
+				logger.log(CLASS_NAME, "Subtracting: \"" + numberToMinus + "\" from UK");
 				int currentTotalUK = Integer.parseInt(lblTotalUK.getText().substring(7 , lblTotalUK.getText().length()));
 				int newTotalUK = currentTotalUK - numberToMinus;
 				tfUK.setText("");
@@ -635,7 +638,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalUK.setText(IPCTrackerKeys.Strings.Total + newTotalUK);
 				break;
 			case IPCTrackerKeys.CountryCodes.Jap:
-				logger.log(this.getClass().getName(), "Subtracting: \"" + numberToMinus + "\" from Jap");
+				logger.log(CLASS_NAME, "Subtracting: \"" + numberToMinus + "\" from Jap");
 				int currentTotalJap = Integer.parseInt(lblTotalJap.getText().substring(7 , lblTotalJap.getText().length()));
 				int newTotalJap = currentTotalJap - numberToMinus;
 				tfJap.setText("");
@@ -643,7 +646,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalJap.setText(IPCTrackerKeys.Strings.Total + newTotalJap);
 				break;
 			case IPCTrackerKeys.CountryCodes.US:
-				logger.log(this.getClass().getName(), "Subtracting: \"" + numberToMinus + "\" from US");
+				logger.log(CLASS_NAME, "Subtracting: \"" + numberToMinus + "\" from US");
 				int currentTotalUS = Integer.parseInt(lblTotalUS.getText().substring(7 , lblTotalUS.getText().length()));
 				int newTotalUS = currentTotalUS - numberToMinus;
 				tfUS.setText("");
@@ -651,7 +654,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				lblTotalUS.setText(IPCTrackerKeys.Strings.Total + newTotalUS);
 				break;
 			default:
-				logger.log(this.getClass().getName(), "Country Code: \"" + countryCode + "\" does not exist.");
+				logger.log(CLASS_NAME, "Country Code: \"" + countryCode + "\" does not exist.");
 				break;
 		}
 	}
@@ -683,7 +686,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		f.setVisible(true);
 		f.setResizable (false);
         logger.setLogName("IPCTracker.log");
-        logger.log(this.getClass().getName(), "Frame Loaded");
+        logger.log(CLASS_NAME, "Frame Loaded");
 	}
 	
 	
@@ -746,24 +749,26 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		
 		BasicLogger osLogger = BasicLogger.getInstance();
 		osLogger.setLogName("IPCTracker.log");
-
-		osLogger.log("Application Version: " + IPCTrackerKeys.Strings.ApplicationVersion);
+		
+		CLASS_NAME = IPCTrackerGui.class.getName();
+		
+		osLogger.log(CLASS_NAME, "Application Version: " + IPCTrackerKeys.Strings.ApplicationVersion);
 		
 		OS = System.getProperty("os.name");
 		
 		if(OS.equals(IPCTrackerKeys.OS.Mac)){
-			osLogger.log("Current OS is: " + IPCTrackerKeys.OS.Mac);
+			osLogger.log(CLASS_NAME, "Current OS is: " + IPCTrackerKeys.OS.Mac);
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name", IPCTrackerKeys.Strings.AppName);
 		}
 		else if(OS.startsWith(IPCTrackerKeys.OS.Win)){
-			osLogger.log("Current OS is: " + IPCTrackerKeys.OS.Win);
+			osLogger.log(CLASS_NAME, "Current OS is: " + IPCTrackerKeys.OS.Win);
 			//Windows specific properties
 			winsowsApplicationIcon = Toolkit.getDefaultToolkit().getImage("res/AppIcon.png");
 		}else{
 			//Linux or unkown
-			osLogger.log("Current OS is: " + OS);
-			osLogger.log(IPCTrackerKeys.OS.OSNotSupportedMessage);
+			osLogger.log(CLASS_NAME, "Current OS is: " + OS);
+			osLogger.log(CLASS_NAME, IPCTrackerKeys.OS.OSNotSupportedMessage);
 			JOptionPane.showMessageDialog(new JFrame(), IPCTrackerKeys.OS.OSNotSupportedMessage, IPCTrackerKeys.OS.OSNotSupportedMessageTitle, 
 					0, new ImageIcon("res" + File.separator + "error.png"));
 			

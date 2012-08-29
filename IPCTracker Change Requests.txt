@@ -5,7 +5,9 @@ To-Do for version 2.0.0.0:
  - Columns for axis and allies with radio buttons for each city.
  - Button for victory check.
  - Do Victory Check on "Victory Check" button.
- - Change version number before production build
+ - Handle Exceptions (ie. Save / Load).
+ - Change Date before production build.
+ - Change version number before production build.
 
 Completed for version 2.0.0.0:
 
