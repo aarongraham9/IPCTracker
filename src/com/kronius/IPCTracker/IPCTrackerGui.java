@@ -101,6 +101,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		if(OS.startsWith(IPCTrackerKeys.OS.Win)){
 			f.setIconImage(winsowsApplicationIcon);
 		}
+		
 		logger = BasicLogger.getInstance();
 		
 		lblSU = new JLabel(IPCTrackerKeys.Strings.SovietUnion);
@@ -213,22 +214,34 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btnUpdate){
-			logger.log(CLASS_NAME, "Update Button");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Update Button");
+			}
 			updateTotals();
 		}else if(e.getSource() == mnuItemNew){
-			logger.log(CLASS_NAME, "New Game Button");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: New Game Button");
+			}
 			createNewGame();
 		}else if(e.getSource() == mnuItemOpen){
-			logger.log(CLASS_NAME, "Open Button");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Open Button");
+			}
 			loadState();
 		}else if(e.getSource() == mnuItemSave){
-			logger.log(CLASS_NAME, "Save Button");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Save Button");
+			}
 			saveState();
 		}else if (e.getSource() == mnuItemQuit){
-			logger.log(CLASS_NAME, "Quitting via menu Button");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Quitting via menu Button");
+			}
 			System.exit(0);
 		}else if (e.getSource() == mnuItemAbout){
-			logger.log(CLASS_NAME, "Showing About Message");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Showing About Message");
+			}
 			JOptionPane.showMessageDialog(f, IPCTrackerKeys.Strings.AboutMessage, IPCTrackerKeys.Strings.AboutMessageTitle, 
 					0, new ImageIcon("res" + File.separator + "Illuminati.png"));
 		}else{
@@ -270,7 +283,9 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				selectedTextAreaName = "Unknown Text Field";
 			}
 			
-			logger.log(CLASS_NAME, "Update via Enter / Return Key from Text Field: " + selectedTextAreaName);
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Update via Enter / Return Key from Text Field: " + selectedTextAreaName);
+			}
 			
 			updateTotals();
 		}
@@ -512,27 +527,37 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		String UStext = tfUS.getText().trim(); 
 		
 		if(!SUtext.isEmpty()){
-			logger.log(CLASS_NAME, "Attempting to update SU with: \"" + SUtext + "\"");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Attempting to update SU with: \"" + SUtext + "\"");
+			}
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.SU, SUtext);
 		}
 		
 		if(!Gertext.isEmpty()){
-			logger.log(CLASS_NAME, "Attempting to update Ger with: \"" + Gertext + "\"");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Attempting to update Ger with: \"" + Gertext + "\"");
+			}
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.Ger, Gertext);
 		}
 		
 		if(!UKtext.isEmpty()){
-			logger.log(CLASS_NAME, "Attempting to update UK with: \"" + UKtext + "\"");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Attempting to update UK with: \"" + UKtext + "\"");
+			}
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.UK, UKtext);
 		}
 		
 		if(!Japtext.isEmpty()){
-			logger.log(CLASS_NAME, "Attempting to update Jap with: \"" + Japtext + "\"");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Attempting to update Jap with: \"" + Japtext + "\"");
+			}
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.Jap, Japtext);
 		}
 		
 		if(!UStext.isEmpty()){
-			logger.log(CLASS_NAME, "Attempting to update US with: \"" + UStext + "\"");
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Attempting to update US with: \"" + UStext + "\"");
+			}
 			updateTotalByCountry(IPCTrackerKeys.CountryCodes.US, UStext);
 		}
 	}
@@ -544,22 +569,31 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		
 		switch(c){
 			case '+': 
-				logger.log(CLASS_NAME, "Adding");
+				if(IPCTrackerKeys.DEBUG_STATUS){
+					logger.log(CLASS_NAME, "DEBUG: Adding");
+				}
 				addition(countryCode, Integer.parseInt(updateText.substring(1, updateText.length())));
 				break;
 			case '-': 
-				logger.log(CLASS_NAME, "Subtracting");
+				if(IPCTrackerKeys.DEBUG_STATUS){
+					logger.log(CLASS_NAME, "DEBUG: Subtracting");
+				}
 				subtraction(countryCode, Integer.parseInt(updateText.substring(1, updateText.length())));
 				break;
 			default :
-				logger.log(CLASS_NAME, "Adding (Without Operator)");
+				
+				if(IPCTrackerKeys.DEBUG_STATUS){
+					logger.log(CLASS_NAME, "DEBUG: Adding (Without Operator)");
+				}
 				addition(countryCode, Integer.parseInt(updateText));
 				break;
 		}
 	}
 		
 	private void addition(int countryCode, int numberToAdd){
-		logger.log(CLASS_NAME, "Add");
+		if(IPCTrackerKeys.DEBUG_STATUS){
+			logger.log(CLASS_NAME, "DEBUG: Add");
+		}
 		
 		switch(countryCode){
 			case IPCTrackerKeys.CountryCodes.SU:
@@ -610,7 +644,9 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	
 	
 	private void subtraction(int countryCode, int numberToMinus){
-		logger.log(CLASS_NAME, "Minus");
+		if(IPCTrackerKeys.DEBUG_STATUS){
+			logger.log(CLASS_NAME, "DEBUG: Minus");
+		}
 		
 		switch(countryCode){
 			case IPCTrackerKeys.CountryCodes.SU:
@@ -685,8 +721,12 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
         f.pack(); //Adjusts panel to components for display
 		f.setVisible(true);
 		f.setResizable (false);
-        logger.setLogName("IPCTracker.log");
-        logger.log(CLASS_NAME, "Frame Loaded");
+        
+		logger.setLogName("IPCTracker.log");
+        
+        if(IPCTrackerKeys.DEBUG_STATUS){
+        	logger.log(CLASS_NAME, "DEBUG: Frame Loaded");
+        }
 	}
 	
 	
