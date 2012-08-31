@@ -53,9 +53,11 @@ public class IPCTrackerKeys {
 	}
 	
 	public static class VictoryStrings{
-		public static final String VictoryCondition = "Victory Condition";
+		public static final String VictoryCondition = "Victory Conditions";
+		public static final String VictoryConditionCitiesToWin = "Cities to Win:";
 		public static final String VictoryConditionNine = "9";
 		public static final String VictoryConditionTwelve = "12";
+		
 		public static final String Axis = "Axis";
 		public static final String Allies = "Allies ";
 		public static final String Washington = "Washington";
