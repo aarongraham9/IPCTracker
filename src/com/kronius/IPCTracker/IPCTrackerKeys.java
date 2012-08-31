@@ -10,7 +10,9 @@ public class IPCTrackerKeys {
 		public static final String AppNameFull = "IPC Tracker for Axis & Allies: Spring 1942";
 		
 		//TODO Change for production builds
-		public static final String ApplicationVersion = "2.0.0.0 Dev"; 
+		public static final String ApplicationVersion = "2.0.0.0 Dev";
+		//TODO Change for production builds
+		public static final String ApplicationVersionReleaseDate = "August 16th, 2012";
 		
 		public static final String SovietUnion = "Soviet Union";
 		public static final String Germany = "Germany";
@@ -39,9 +41,8 @@ public class IPCTrackerKeys {
 		public static final String AboutMenuItemText = "About " + AppName;
 
 		public static final String AboutMessageTitle = "About " + AppName;
-		public static final String AboutMessage = "Created by Aaron Graham (aarongraham9@gmail.com)." +
-				"\nAugust 16th, 2012.\nVersion " + ApplicationVersion +
-				"\nKronius Productions (CC)";
+		public static final String AboutMessage = "Created by Aaron Graham (aarongraham9@gmail.com).\n"
+		 + ApplicationVersionReleaseDate + ".\nVersion " + ApplicationVersion + "\nKronius Productions (CC)";
 	}
 	
 	public static class CountryCodes{
@@ -53,8 +54,8 @@ public class IPCTrackerKeys {
 	}
 	
 	public static class VictoryStrings{
-		public static final String VictoryCondition = "Victory Conditions";
-		public static final String VictoryConditionCitiesToWin = "Cities to Win:";
+		public static final String VictoryCondition = "Victory Conditions:";
+		public static final String VictoryConditionCitiesToWin = "Cities to Win";
 		public static final String VictoryConditionNine = "9";
 		public static final String VictoryConditionTwelve = "12";
 		
