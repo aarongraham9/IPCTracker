@@ -61,7 +61,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
     private JLabel lblVictoryCondition;
     
     private JLabel lblVictoryConditionCitiesToWin;
-    @SuppressWarnings("unused")
+	@SuppressWarnings("unused")
 	private ButtonGroup btnGrpVictoryCities;
     private JRadioButton rdioBtnVictoryConditionNine;
     private JRadioButton rdioBtnVictoryConditionTwelve;
@@ -69,10 +69,10 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
     private JLabel lblVictoryCityWashington;
     
     private ButtonGroup btnGrpVictoryCityWashington;
-    private JRadioButton rdioBtnVictoryCityWashingtoAxis;
+    private JRadioButton rdioBtnVictoryCityWashingtonAxis;
     private JRadioButton rdioBtnVictoryCityWashingtonAllies;
     
-    private JLabel lblVictoryCityWashingtonLondon;
+    private JLabel lblVictoryCityLondon;
     
     private ButtonGroup btnGrpVictoryCityLondon;
     private JRadioButton rdioBtnVictoryCityLondonAxis;
@@ -228,28 +228,123 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	    lblVictoryCityWashington = new JLabel(IPCTrackerKeys.VictoryStrings.Washington);
 	    
 	    btnGrpVictoryCityWashington = new ButtonGroup();
-	    rdioBtnVictoryCityWashingtoAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityWashingtonAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
 	    rdioBtnVictoryCityWashingtonAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
 	    rdioBtnVictoryCityWashingtonAllies.setSelected(true);
 	    
-	    btnGrpVictoryCityWashington.add(rdioBtnVictoryCityWashingtoAxis);
+	    btnGrpVictoryCityWashington.add(rdioBtnVictoryCityWashingtonAxis);
 	    btnGrpVictoryCityWashington.add(rdioBtnVictoryCityWashingtonAllies);
 	    
-	    //btnGrpVictoryCities = new ButtonGroup();
+	    lblVictoryCityLondon = new JLabel(IPCTrackerKeys.VictoryStrings.London);
 	    
-	    //rdioBtnVictoryCityWashington;
-	    //rdioBtnVictoryCityLondon;
-	    //rdioBtnVictoryCityLeningrad;
-	    //rdioBtnVictoryCityMoscow;
-	    //rdioBtnVictoryCityCalcutta;
-	    //rdioBtnVictoryCityLosAngeles;
-	    //rdioBtnVictoryCityBerlin;
-	    //rdioBtnVictoryCityParis;
-	    //rdioBtnVictoryCityRome;
-	    //rdioBtnVictoryCityShanghai;
-	    //rdioBtnVictoryCityManila;
-	    //rdioBtnVictoryCityTokyo;
+	    btnGrpVictoryCityLondon = new ButtonGroup();
+	    rdioBtnVictoryCityLondonAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityLondonAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    rdioBtnVictoryCityLondonAllies.setSelected(true);
 	    
+	    btnGrpVictoryCityLondon.add(rdioBtnVictoryCityLondonAxis);
+	    btnGrpVictoryCityLondon.add(rdioBtnVictoryCityLondonAllies);
+	    
+	    lblVictoryCityLeningrad = new JLabel(IPCTrackerKeys.VictoryStrings.Leningrad);
+	    
+	    btnGrpVictoryCityLeningrad = new ButtonGroup();
+	    rdioBtnVictoryCityLeningradAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityLeningradAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    rdioBtnVictoryCityLeningradAllies.setSelected(true);
+	    
+	    btnGrpVictoryCityLeningrad.add(rdioBtnVictoryCityLeningradAxis);
+	    btnGrpVictoryCityLeningrad.add(rdioBtnVictoryCityLeningradAllies);
+	    
+	    lblVictoryCityMoscow = new JLabel(IPCTrackerKeys.VictoryStrings.Moscow);
+	    
+	    btnGrpVictoryCityMoscow = new ButtonGroup();
+	    rdioBtnVictoryCityMoscowAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityMoscowAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    rdioBtnVictoryCityMoscowAllies.setSelected(true);
+	    
+	    btnGrpVictoryCityMoscow.add(rdioBtnVictoryCityMoscowAxis);
+	    btnGrpVictoryCityMoscow.add(rdioBtnVictoryCityMoscowAllies);
+	    
+	    lblVictoryCityCalcutta = new JLabel(IPCTrackerKeys.VictoryStrings.Calcutta);
+	    
+	    btnGrpVictoryCityCalcutta = new ButtonGroup();
+	    rdioBtnVictoryCityCalcuttaAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityCalcuttaAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    rdioBtnVictoryCityCalcuttaAllies.setSelected(true);
+	    
+	    btnGrpVictoryCityCalcutta.add(rdioBtnVictoryCityCalcuttaAxis);
+	    btnGrpVictoryCityCalcutta.add(rdioBtnVictoryCityCalcuttaAllies);
+
+	    lblVictoryCityLosAngeles = new JLabel(IPCTrackerKeys.VictoryStrings.LosAngeles);
+	    
+	    btnGrpVictoryCityLosAngeles = new ButtonGroup();
+	    rdioBtnVictoryCityLosAngelesAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityLosAngelesAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    rdioBtnVictoryCityLosAngelesAllies.setSelected(true);
+	    
+	    btnGrpVictoryCityLosAngeles.add(rdioBtnVictoryCityLosAngelesAxis);
+	    btnGrpVictoryCityLosAngeles.add(rdioBtnVictoryCityLosAngelesAllies);
+
+	    lblVictoryCityBerlin = new JLabel(IPCTrackerKeys.VictoryStrings.Berlin);
+	    
+	    btnGrpVictoryCityBerlin = new ButtonGroup();
+	    rdioBtnVictoryCityBerlinAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityBerlinAxis.setSelected(true);
+	    rdioBtnVictoryCityBerlinAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    
+	    btnGrpVictoryCityBerlin.add(rdioBtnVictoryCityBerlinAxis);
+	    btnGrpVictoryCityBerlin.add(rdioBtnVictoryCityBerlinAllies);
+
+	    lblVictoryCityParis = new JLabel(IPCTrackerKeys.VictoryStrings.Paris);
+	    
+	    btnGrpVictoryCityParis = new ButtonGroup();
+	    rdioBtnVictoryCityParisAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityParisAxis.setSelected(true);
+	    rdioBtnVictoryCityParisAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    
+	    btnGrpVictoryCityParis.add(rdioBtnVictoryCityParisAxis);
+	    btnGrpVictoryCityParis.add(rdioBtnVictoryCityParisAllies);
+
+	    lblVictoryCityRome = new JLabel(IPCTrackerKeys.VictoryStrings.Rome);
+	    
+	    btnGrpVictoryCityRome = new ButtonGroup();
+	    rdioBtnVictoryCityRomeAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityRomeAxis.setSelected(true);
+	    rdioBtnVictoryCityRomeAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    
+	    btnGrpVictoryCityRome.add(rdioBtnVictoryCityRomeAxis);
+	    btnGrpVictoryCityRome.add(rdioBtnVictoryCityRomeAllies);
+
+	    lblVictoryCityShanghai = new JLabel(IPCTrackerKeys.VictoryStrings.Shanghai);
+	    
+	    btnGrpVictoryCityShanghai = new ButtonGroup();
+	    rdioBtnVictoryCityShanghaiAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityShanghaiAxis.setSelected(true);
+	    rdioBtnVictoryCityShanghaiAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    
+	    btnGrpVictoryCityShanghai.add(rdioBtnVictoryCityShanghaiAxis);
+	    btnGrpVictoryCityShanghai.add(rdioBtnVictoryCityShanghaiAllies);
+    
+	    lblVictoryCityManila = new JLabel(IPCTrackerKeys.VictoryStrings.Manila);
+	    
+	    btnGrpVictoryCityManila = new ButtonGroup();
+	    rdioBtnVictoryCityManilaAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityManilaAxis.setSelected(true);
+	    rdioBtnVictoryCityManilaAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    
+	    btnGrpVictoryCityManila.add(rdioBtnVictoryCityManilaAxis);
+	    btnGrpVictoryCityManila.add(rdioBtnVictoryCityManilaAllies);
+
+	    lblVictoryCityTokyo = new JLabel(IPCTrackerKeys.VictoryStrings.Tokyo);
+	    
+	    btnGrpVictoryCityTokyo = new ButtonGroup();
+	    rdioBtnVictoryCityTokyoAxis = new JRadioButton(IPCTrackerKeys.VictoryStrings.Axis);
+	    rdioBtnVictoryCityTokyoAxis.setSelected(true);
+	    rdioBtnVictoryCityTokyoAllies = new JRadioButton(IPCTrackerKeys.VictoryStrings.Allies);
+	    
+	    btnGrpVictoryCityTokyo.add(rdioBtnVictoryCityTokyoAxis);
+	    btnGrpVictoryCityTokyo.add(rdioBtnVictoryCityTokyoAllies);
+
 	    btnVictoryCheck = new JButton(IPCTrackerKeys.Strings.VictoryCheckButtonText);
 	    
 	    mb = new JMenuBar();
@@ -295,6 +390,11 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				logger.log(CLASS_NAME, "DEBUG: Update Button");
 			}
 			updateTotals();
+		}else if(e.getSource() == btnVictoryCheck){
+			if(IPCTrackerKeys.DEBUG_STATUS){
+				logger.log(CLASS_NAME, "DEBUG: Victory Check Button");
+			}
+			victoryCheck();
 		}else if(e.getSource() == mnuItemNew){
 			if(IPCTrackerKeys.DEBUG_STATUS){
 				logger.log(CLASS_NAME, "DEBUG: New Game Button");
@@ -595,6 +695,12 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		
 	}
 	
+	private void victoryCheck() {
+		//TODO finish victory check
+		
+		boolean b = rdioBtnVictoryConditionNine.isSelected();
+	}
+	
 	private void updateTotals() {
 		
 		String SUtext = tfSU.getText().trim(); 
@@ -809,14 +915,14 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	
 	private JPanel buildMiGDashboard() {
         JPanel panel = new JPanel();
-        panel.setLayout(new MigLayout("wrap", "[fill]15[fill]15[fill]15[fill]15[fill]15[fill]15[fill]", "rel[]rel"));
+        panel.setLayout(new MigLayout("wrap", "[fill]15[fill]15[fill]15[fill]15[fill]15[fill]", "rel[]rel"));
         buildMiGForm(panel);
         return panel;
     }
 	
 	private JPanel buildInnerMiGDashboard() {
         JPanel innerPanel = new JPanel();
-        innerPanel.setLayout(new MigLayout("wrap 2", "", "rel[]rel"));
+        innerPanel.setLayout(new MigLayout("wrap 4", "", "1[]1"));
         buildInnerMiGForm(innerPanel);
         return innerPanel;
     }
@@ -827,9 +933,8 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
         panel.add(lblUK, "");
         panel.add(lblJap, "");
         panel.add(lblUS, "");
-        
-        panel.add(new JSeparator(JSeparator.VERTICAL), "");        
-        panel.add(lblVictoryCondition, "");
+              
+        panel.add(new JLabel(""), "");  
         
         panel.add(lblTotalSU, "");
         panel.add(lblTotalGer, "");
@@ -837,16 +942,14 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
         panel.add(lblTotalJap, "");
         panel.add(lblTotalUS, "");
         
-        panel.add(new JSeparator(JSeparator.VERTICAL), "");
-        panel.add(new JSeparator(JSeparator.VERTICAL), "");  
+        panel.add(new JLabel(""), "");
         
         panel.add(sbrSU, "");
         panel.add(sbrGer, "");
         panel.add(sbrUK, "");
         panel.add(sbrJap, "");
         panel.add(sbrUS, "");
-        
-        panel.add(new JSeparator(JSeparator.VERTICAL), "");  
+         
         
         panel.add(buildInnerMiGDashboard());  
         
@@ -856,29 +959,71 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
         panel.add(tfJap, "");
         panel.add(tfUS, "");
         
-        panel.add(new JSeparator(JSeparator.VERTICAL), "");  
-        panel.add(new JSeparator(JSeparator.VERTICAL), "");  
+        panel.add(btnVictoryCheck, "");  
         
         panel.add(new JLabel(""));
         panel.add(new JLabel(""));
         panel.add(new JLabel(""));
         panel.add(new JLabel(""));
         panel.add(btnUpdate, "");
-        
-        panel.add(new JSeparator(JSeparator.VERTICAL), "");  
-        panel.add(btnVictoryCheck, "");
+         
+        panel.add(new JLabel(""));
     }
     
     private void buildInnerMiGForm(JPanel innerPanel) {
-    	innerPanel.add(lblVictoryConditionCitiesToWin, "span");
+    	innerPanel.add(lblVictoryCondition, "span");
     	
+    	innerPanel.add(lblVictoryConditionCitiesToWin, "span 2");
     	innerPanel.add(rdioBtnVictoryConditionNine, "");
-    	innerPanel.add(rdioBtnVictoryConditionTwelve, "gapleft 5");
+    	innerPanel.add(rdioBtnVictoryConditionTwelve, "");
+
+    	innerPanel.add(lblVictoryCityWashington, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityWashingtonAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityWashingtonAllies, "");
     	
-    	innerPanel.add(lblVictoryCityWashington, "span");
-	    
-    	innerPanel.add(rdioBtnVictoryCityWashingtoAxis, "");
-    	innerPanel.add(rdioBtnVictoryCityWashingtonAllies, "gapleft 5");
+    	innerPanel.add(lblVictoryCityLondon, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityLondonAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityLondonAllies, "");
+
+    	innerPanel.add(lblVictoryCityLeningrad, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityLeningradAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityLeningradAllies, "");
+
+    	innerPanel.add(lblVictoryCityMoscow, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityMoscowAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityMoscowAllies, "");
+    	
+    	innerPanel.add(lblVictoryCityCalcutta, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityCalcuttaAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityCalcuttaAllies, "");
+    	
+    	innerPanel.add(lblVictoryCityLosAngeles, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityLosAngelesAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityLosAngelesAllies, "");
+    	
+    	innerPanel.add(lblVictoryCityBerlin, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityBerlinAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityBerlinAllies, "");
+    	
+    	innerPanel.add(lblVictoryCityParis, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityParisAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityParisAllies, "");
+
+    	innerPanel.add(lblVictoryCityRome, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityRomeAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityRomeAllies, "");
+
+    	innerPanel.add(lblVictoryCityShanghai, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityShanghaiAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityShanghaiAllies, "");
+
+    	innerPanel.add(lblVictoryCityManila, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityManilaAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityManilaAllies, "");
+
+    	innerPanel.add(lblVictoryCityTokyo, "span 2");
+    	innerPanel.add(rdioBtnVictoryCityTokyoAxis, "");
+    	innerPanel.add(rdioBtnVictoryCityTokyoAllies, "");	
     }
 
 	public static void main(String args[]){
