@@ -1,6 +1,5 @@
 To-Do for version 2.0.0.0:
 
-CR010 - Do Victory Check on "Victory Check" button.
 CR011 - Save / Load new data for "Victory Check".
 CR012 - Add Reverse compatability.
 CR013 - Handle Exceptions (ie. Save / Load).
@@ -17,6 +16,7 @@ CR006 - Move some logging to only be during "DEBUG_STATUS = true".
 CR007 - Button for victory check.
 CR008 - Radio buttons for 9 / 12 city victory.
 CR009 - Columns for axis and allies with radio buttons for each city.
+CR010 - Do Victory Check on "Victory Check" button.
  
 Completed for version 1.0.0.0:
 
