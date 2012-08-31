@@ -382,7 +382,6 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
         tfUS.addKeyListener(this);
 	}
 	
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == btnUpdate){
@@ -427,18 +426,15 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		}
 	}
 	
-	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		// Ignore
 	}
 
-
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// Ignore
 	}
-
 
 	@Override
 	public void keyTyped(KeyEvent key) {
@@ -468,7 +464,6 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		}
 	}
 
-	
 	private void createNewGame() {
 		
 		lblTotalSU.setText(IPCTrackerKeys.Strings.Total + IPCTrackerKeys.Strings.StartingValueSU);
@@ -831,7 +826,6 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		}
 	}
 	
-	
 	private void updateTotalByCountry(int countryCode, String updateText){
 		
 		char c = updateText.charAt(0);
@@ -911,7 +905,6 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		}
 	}
 	
-	
 	private void subtraction(int countryCode, int numberToMinus){
 		if(IPCTrackerKeys.DEBUG_STATUS){
 			logger.log(CLASS_NAME, "DEBUG: Minus");
@@ -964,7 +957,6 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		}
 	}
 	
-
 	private void launchFrame(){
 		
 		f.getContentPane().setLayout(new BorderLayout());
@@ -997,7 +989,6 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
         	logger.log(CLASS_NAME, "DEBUG: Frame Loaded");
         }
 	}
-	
 	
 	private JPanel buildMiGDashboard() {
         JPanel panel = new JPanel();
