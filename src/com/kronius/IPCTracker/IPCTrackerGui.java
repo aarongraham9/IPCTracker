@@ -482,6 +482,21 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	    taUK.setText("+" + IPCTrackerKeys.Strings.StartingValueUK);
 	    taJap.setText("+" + IPCTrackerKeys.Strings.StartingValueJap);
 	    taUS.setText("+" + IPCTrackerKeys.Strings.StartingValueUS);
+	    
+	    rdioBtnVictoryConditionNine.setSelected(true);
+	    
+	    rdioBtnVictoryCityWashingtonAllies.setSelected(true);
+	    rdioBtnVictoryCityLondonAllies.setSelected(true);
+	    rdioBtnVictoryCityLeningradAllies.setSelected(true);
+	    rdioBtnVictoryCityMoscowAllies.setSelected(true);
+	    rdioBtnVictoryCityCalcuttaAllies.setSelected(true);
+	    rdioBtnVictoryCityLosAngelesAllies.setSelected(true);
+	    rdioBtnVictoryCityBerlinAxis.setSelected(true);
+	    rdioBtnVictoryCityParisAxis.setSelected(true);
+	    rdioBtnVictoryCityRomeAxis.setSelected(true);
+	    rdioBtnVictoryCityShanghaiAxis.setSelected(true);
+	    rdioBtnVictoryCityManilaAxis.setSelected(true);
+	    rdioBtnVictoryCityTokyoAxis.setSelected(true);
 		
 	}
 
@@ -697,8 +712,79 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	
 	private void victoryCheck() {
 		//TODO finish victory check
+		boolean isVictoryConditionNine = rdioBtnVictoryConditionNine.isSelected();
 		
-		boolean b = rdioBtnVictoryConditionNine.isSelected();
+		int numberOfAxisControlledCities = 0;
+		
+		if(rdioBtnVictoryCityWashingtonAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityLondonAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityLeningradAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityMoscowAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityCalcuttaAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityLosAngelesAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityBerlinAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityParisAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityRomeAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityShanghaiAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityManilaAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		if(rdioBtnVictoryCityTokyoAxis.isSelected()){
+			numberOfAxisControlledCities++;
+		}
+		
+		String sideThatWon = "Axis";
+		int numberOfAlliesControlledCities = 12 - numberOfAxisControlledCities;
+		String icon = "avatar_gr_icon.gif";
+		
+		if(isVictoryConditionNine){
+			if(numberOfAxisControlledCities > 8){
+				sideThatWon = "Axis";
+				icon = "avatar_gr_icon.gif";
+			}else if(numberOfAxisControlledCities < 4){
+				sideThatWon = "Allies";
+				icon = "avatar_usa_icon.gif";
+			}
+			else{
+				return; //If there is no winner do nothing.
+			}
+		}else{
+			if(numberOfAxisControlledCities > 11){
+				sideThatWon = "Axis";
+				icon = "avatar_gr_icon.gif";
+			}else if (numberOfAxisControlledCities < 1){
+				sideThatWon = "Allies";
+				icon = "avatar_usa_icon.gif";
+			}
+			else{
+				return; //If there is no winner do nothing.
+			}
+		}
+		
+		JOptionPane.showMessageDialog(f, sideThatWon + " Wins!\nWith a score of:\n"
+				+ numberOfAxisControlledCities + " cities for Axis\nand:\n"
+				+ numberOfAlliesControlledCities + " cities for Allies" , sideThatWon
+				+ " Wins!", 0, new ImageIcon("res" + File.separator + icon));
 	}
 	
 	private void updateTotals() {
