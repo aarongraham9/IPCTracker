@@ -1,19 +1,23 @@
 To-Do for version 2.0.0.0:
 
- - Radio buttons for 9 / 12 city victory.
- - Columns for axis and allies with radio buttons for each city.
- - Button for victory check.
- - Do Victory Check on "Victory Check" button.
- - Save / Load new data for "Victory Check".
- - Add Reverse compatability.
- - Handle Exceptions (ie. Save / Load).
- - Change Date before production build.
- - Change version number before production build.
+CR008 - Radio buttons for 9 / 12 city victory.
+CR009 - Columns for axis and allies with radio buttons for each city.
+CR010 - Do Victory Check on "Victory Check" button.
+CR011 - Save / Load new data for "Victory Check".
+CR012 - Add Reverse compatability.
+CR013 - Handle Exceptions (ie. Save / Load).
+CR014 - Change Date before production build.
+CR015 - Change version number before production build.
 
 Completed for version 2.0.0.0:
 
- - Disabled Re-Sizing.
- - Handle "Enter Return" key to run update method.
- - Add logging the Application version number.
- - Actually save in folder that dialogue points to.
- - Move some logging to only be during "DEBUG_STATUS = true". 
+CR002 - Disabled Re-Sizing.
+CR003 - Handle "Enter Return" key to run update method.
+CR004 - Add logging the Application version number.
+CR005 - Actually save in folder that dialogue points to.
+CR006 - Move some logging to only be during "DEBUG_STATUS = true". 
+CR007 - Button for victory check.
+ 
+Completed for version 1.0.0.0:
+
+CR001 - Version 1.0.0.0
