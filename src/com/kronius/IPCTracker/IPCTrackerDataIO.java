@@ -1,7 +1,9 @@
 package com.kronius.IPCTracker;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class IPCTrackerDataIO {
@@ -32,8 +34,58 @@ public class IPCTrackerDataIO {
 	public static IPCTrackerDataV2 LoadData(String path){
 		
 		IPCTrackerDataV2 loadedData = new IPCTrackerDataV2();
+		IPCTrackerData v1LoadedData = new IPCTrackerData();
 		
+		FileInputStream fis = null;
+		ObjectInputStream in = null;
+	    
+		if(path.endsWith(IPCTrackerKeys.FileNames.FileName)){
+			
+			try
+		    {
+		    	fis = new FileInputStream(path);
+		    	in = new ObjectInputStream(fis);
+		    	loadedData = (IPCTrackerDataV2)in.readObject(); 
+		    	in.close();
+		    }
+		    catch(IOException ex)
+		    {
+		    	ex.printStackTrace();
+		    }
+		    catch(ClassNotFoundException ex)
+		    {
+		    	ex.printStackTrace();
+		    }
+			
+		}else if (path.endsWith(IPCTrackerKeys.FileNames.Version1FileName)){
 		
+			try
+		    {
+		    	fis = new FileInputStream(path);
+		    	in = new ObjectInputStream(fis);
+		    	v1LoadedData = (IPCTrackerData)in.readObject(); 
+		    	in.close();
+		    }
+		    catch(IOException ex)
+		    {
+		    	ex.printStackTrace();
+		    }
+		    catch(ClassNotFoundException ex)
+		    {
+		    	ex.printStackTrace();
+		    }
+			
+			//Here parse v1LoadedData data into the loadedData object.
+			//Fill in the other loadedData with the defaults.
+			loadedData.setSUTotal(v1LoadedData.getSUTotal());
+			//etc
+			
+			loadedData.setIsVictoryConditionNine(true);
+			//etc
+		}
+		else{
+			//Error
+		}
 		
 		return loadedData;
 	}

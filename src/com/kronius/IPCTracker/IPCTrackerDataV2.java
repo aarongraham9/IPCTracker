@@ -179,4 +179,108 @@ public class IPCTrackerDataV2 implements Serializable {
     public List<String> getTransactionHistoryUS(){
     	return TransactionHistoryUS;
     }
+    
+    public void setIsVictoryConditionNine(boolean isVictoryConditionNineIn){
+    	isVictoryConditionNine = isVictoryConditionNineIn;
+    }
+    
+    public boolean getIsVictoryConditionNine(){
+    	return isVictoryConditionNine;
+    }
+    
+    public void setIsVictoryCityWashingtonAxis(boolean isVictoryCityWashingtonAxisIn){
+    	isVictoryCityWashingtonAxis = isVictoryCityWashingtonAxisIn;
+    }
+    
+    public boolean getIsVictoryCityWashingtonAxis(){
+    	return isVictoryCityWashingtonAxis;
+    }
+    
+    public void setIsVictoryCityLondonAxis(boolean isVictoryCityLondonAxisIn){
+    	isVictoryCityLondonAxis = isVictoryCityLondonAxisIn;
+    }
+    
+    public boolean getIsVictoryCityLondonAxis(){
+    	return isVictoryCityLondonAxis;
+    }
+    
+	public void setIsVictoryCityLeningradAxis(boolean isVictoryCityLeningradAxisIn){
+		isVictoryCityLeningradAxis = isVictoryCityLeningradAxisIn;
+	}
+    
+    public boolean getIsVictoryCityLeningradAxis(){
+    	return isVictoryCityLeningradAxis;
+    }
+    
+	public void setIsVictoryCityMoscowAxis(boolean isVictoryCityMoscowAxisIn){
+		isVictoryCityMoscowAxis = isVictoryCityMoscowAxisIn;
+	}
+    
+    public boolean getIsVictoryCityMoscowAxis(){
+    	return isVictoryCityMoscowAxis;
+    }
+    
+	public void setIsVictoryCityCalcuttaAxis(boolean isVictoryCityCalcuttaAxisIn){
+		isVictoryCityCalcuttaAxis = isVictoryCityCalcuttaAxisIn;
+	}
+    
+    public boolean getIsVictoryCityCalcuttaAxis(){
+    	return isVictoryCityCalcuttaAxis;
+    }
+    
+	public void setIsVictoryCityLosAngelesAxis(boolean isVictoryCityLosAngelesAxisIn){
+		isVictoryCityLosAngelesAxis = isVictoryCityLosAngelesAxisIn;
+	}
+    
+    public boolean getIsVictoryCityLosAngelesAxis(){
+    	return isVictoryCityLosAngelesAxis;
+    }
+    
+	public void setIsVictoryCityBerlinAxis(boolean isVictoryCityBerlinAxisIn){
+		isVictoryCityBerlinAxis = isVictoryCityBerlinAxisIn;
+	}
+    
+    public boolean getIsVictoryCityBerlinAxis(){
+    	return isVictoryCityBerlinAxis;
+    }
+    
+	public void setIsVictoryCityParisAxis(boolean isVictoryCityParisAxisIn){
+		isVictoryCityParisAxis = isVictoryCityParisAxisIn;
+	}
+    
+    public boolean getIsVictoryCityParisAxis(){
+    	return isVictoryCityParisAxis;
+    }
+    
+	public void setIsVictoryCityRomeAxis(boolean isVictoryCityRomeAxisIn){
+		isVictoryCityRomeAxis = isVictoryCityRomeAxisIn;
+	}
+    
+    public boolean getIsVictoryCityRomeAxis(){
+    	return isVictoryCityRomeAxis;
+    }
+    
+	public void setIsVictoryCityShanghaiAxis(boolean isVictoryCityShanghaiAxisIn){
+		isVictoryCityShanghaiAxis = isVictoryCityShanghaiAxisIn;
+	}
+    
+    public boolean getIsVictoryCityShanghaiAxis(){
+    	return isVictoryCityShanghaiAxis;
+    }
+    
+	public void setIsVictoryCityManilaAxis(boolean isVictoryCityManilaAxisIn){
+		isVictoryCityManilaAxis = isVictoryCityManilaAxisIn;
+	}
+    
+    public boolean getIsVictoryCityManilaAxis(){
+    	return isVictoryCityManilaAxis;
+    }
+    
+	public void setIsVictoryCityTokyoAxis(boolean isVictoryCityTokyoAxisIn){
+		isVictoryCityTokyoAxis = isVictoryCityTokyoAxisIn;
+	}
+	
+	public boolean getIsVictoryCityTokyoAxis(){
+    	return isVictoryCityTokyoAxis;
+    }
 }

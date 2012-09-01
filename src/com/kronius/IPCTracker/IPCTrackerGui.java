@@ -5,11 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
 import java.io.StringReader;
 import java.util.LinkedList;
 import java.util.List;
@@ -497,7 +494,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 
 	private void loadState() {
 		
-		String filePath = "Save1.ipctracker";
+		String filePath = "Save1" + IPCTrackerKeys.FileNames.FileName;
 		
 		int returnVal = fileChooser.showOpenDialog(mnuItemOpen);
 		 
@@ -510,25 +507,9 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
             return;
         }
 		
-		IPCTrackerData loadedData = null;
-		FileInputStream fis = null;
-		ObjectInputStream in = null;
-	    
-		try
-	    {
-	    	fis = new FileInputStream(filePath);
-	    	in = new ObjectInputStream(fis);
-	    	loadedData = (IPCTrackerData)in.readObject(); 
-	    	in.close();
-	    }
-	    catch(IOException ex)
-	    {
-	    	ex.printStackTrace();
-	    }
-	    catch(ClassNotFoundException ex)
-	    {
-	    	ex.printStackTrace();
-	    }
+		IPCTrackerDataV2 loadedData = null;
+		
+		loadedData = IPCTrackerDataIO.LoadData(filePath);
 		
 		//Update fields and labels from loaded data
 		lblTotalSU.setText(IPCTrackerKeys.Strings.Total + loadedData.getSUTotal());
@@ -688,11 +669,26 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		dataToSave.setTransactionHistoryJap(TransactionHistoryJap);
 		dataToSave.setTransactionHistoryUS(TransactionHistoryUS);
 		
+		dataToSave.setIsVictoryConditionNine(rdioBtnVictoryConditionNine.isSelected());
+		
+		dataToSave.setIsVictoryCityWashingtonAxis(this.rdioBtnVictoryCityWashingtonAxis.isSelected());
+		dataToSave.setIsVictoryCityLondonAxis(this.rdioBtnVictoryCityLondonAxis.isSelected());
+		dataToSave.setIsVictoryCityLeningradAxis(this.rdioBtnVictoryCityLeningradAxis.isSelected());
+		dataToSave.setIsVictoryCityMoscowAxis(this.rdioBtnVictoryCityMoscowAxis.isSelected());
+		dataToSave.setIsVictoryCityCalcuttaAxis(this.rdioBtnVictoryCityCalcuttaAxis.isSelected());
+		dataToSave.setIsVictoryCityLosAngelesAxis(this.rdioBtnVictoryCityLosAngelesAxis.isSelected());
+		dataToSave.setIsVictoryCityBerlinAxis(this.rdioBtnVictoryCityBerlinAxis.isSelected());
+		dataToSave.setIsVictoryCityParisAxis(this.rdioBtnVictoryCityParisAxis.isSelected());
+		dataToSave.setIsVictoryCityRomeAxis(this.rdioBtnVictoryCityRomeAxis.isSelected());
+		dataToSave.setIsVictoryCityShanghaiAxis(this.rdioBtnVictoryCityShanghaiAxis.isSelected());
+		dataToSave.setIsVictoryCityManilaAxis(this.rdioBtnVictoryCityManilaAxis.isSelected());
+		dataToSave.setIsVictoryCityTokyoAxis(this.rdioBtnVictoryCityTokyoAxis.isSelected());
+		
 		IPCTrackerDataIO.SaveData(filePath, dataToSave);
 	}
 	
 	private void victoryCheck() {
-		//TODO finish victory check
+
 		boolean isVictoryConditionNine = rdioBtnVictoryConditionNine.isSelected();
 		
 		int numberOfAxisControlledCities = 0;
