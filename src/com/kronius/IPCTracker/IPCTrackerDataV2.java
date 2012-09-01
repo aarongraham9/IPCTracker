@@ -20,6 +20,21 @@ public class IPCTrackerDataV2 implements Serializable {
 	private List<String> TransactionHistoryJap;
 	private List<String> TransactionHistoryUS;
 	
+	private boolean isVictoryConditionNine;
+	
+	private boolean isVictoryCityWashingtonAxis;
+	private boolean isVictoryCityLondonAxis;
+	private boolean isVictoryCityLeningradAxis;
+	private boolean isVictoryCityMoscowAxis;
+	private boolean isVictoryCityCalcuttaAxis;
+	private boolean isVictoryCityLosAngelesAxis;
+	private boolean isVictoryCityBerlinAxis;
+	private boolean isVictoryCityParisAxis;
+	private boolean isVictoryCityRomeAxis;
+	private boolean isVictoryCityShanghaiAxis;
+	private boolean isVictoryCityManilaAxis;
+	private boolean isVictoryCityTokyoAxis;
+	
 	
 	public IPCTrackerDataV2(){
 		SUTotal = 0;
@@ -33,12 +48,31 @@ public class IPCTrackerDataV2 implements Serializable {
 		TransactionHistoryUK = new LinkedList<String>();
 		TransactionHistoryJap = new LinkedList<String>();
 		TransactionHistoryUS = new LinkedList<String>();
+		
+		isVictoryCityWashingtonAxis = false;
+		isVictoryCityLondonAxis = false;
+		isVictoryCityLeningradAxis = false;
+		isVictoryCityMoscowAxis = false;
+		isVictoryCityCalcuttaAxis = false;
+		isVictoryCityLosAngelesAxis = false;
+		isVictoryCityBerlinAxis = true;
+		isVictoryCityParisAxis = true;
+		isVictoryCityRomeAxis = true;
+		isVictoryCityShanghaiAxis = true;
+		isVictoryCityManilaAxis = true;
+		isVictoryCityTokyoAxis = true;
 	}
 	
     public IPCTrackerDataV2(int SUTotalIn, int GerTotalIn, int UKTotalIn, int JapTotalIn, int USTotalIn, 
     		List<String> TransactionHistorySUIn, List<String> TransactionHistoryGerIn, 
     		List<String> TransactionHistoryUKIn, List<String> TransactionHistoryJapIn, 
-    		List<String> TransactionHistoryUSIn){
+    		List<String> TransactionHistoryUSIn, boolean isVictoryCityWashingtonAxisIn, 
+    		boolean isVictoryCityLondonAxisIn, boolean isVictoryCityLeningradAxisIn, 
+    		boolean isVictoryCityMoscowAxisIn, boolean isVictoryCityCalcuttaAxisIn, 
+    		boolean isVictoryCityLosAngelesAxisIn, boolean isVictoryCityBerlinAxisIn, 
+    		boolean isVictoryCityParisAxisIn, boolean isVictoryCityRomeAxisIn, 
+    		boolean isVictoryCityShanghaiAxisIn, boolean isVictoryCityManilaAxisIn, 
+    		boolean isVictoryCityTokyoAxisIn){
 		
     	SUTotal = SUTotalIn;
 		GerTotal = GerTotalIn;
@@ -51,6 +85,19 @@ public class IPCTrackerDataV2 implements Serializable {
 		TransactionHistoryUK = TransactionHistoryUKIn;
 		TransactionHistoryJap = TransactionHistoryJapIn;
 		TransactionHistoryUS = TransactionHistoryUSIn;
+		
+		isVictoryCityWashingtonAxis = isVictoryCityWashingtonAxisIn;
+		isVictoryCityLondonAxis = isVictoryCityLondonAxisIn;
+		isVictoryCityLeningradAxis = isVictoryCityLeningradAxisIn;
+		isVictoryCityMoscowAxis = isVictoryCityMoscowAxisIn;
+		isVictoryCityCalcuttaAxis = isVictoryCityCalcuttaAxisIn;
+		isVictoryCityLosAngelesAxis = isVictoryCityLosAngelesAxisIn;
+		isVictoryCityBerlinAxis = isVictoryCityBerlinAxisIn;
+		isVictoryCityParisAxis = isVictoryCityParisAxisIn;
+		isVictoryCityRomeAxis = isVictoryCityRomeAxisIn;
+		isVictoryCityShanghaiAxis = isVictoryCityShanghaiAxisIn;
+		isVictoryCityManilaAxis = isVictoryCityManilaAxisIn;
+		isVictoryCityTokyoAxis = isVictoryCityTokyoAxisIn;
 	}
     
     public void setSUTotal(int SUTotalIn){

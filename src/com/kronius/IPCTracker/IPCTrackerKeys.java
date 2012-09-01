@@ -45,6 +45,12 @@ public class IPCTrackerKeys {
 		 + ApplicationVersionReleaseDate + ".\nVersion " + ApplicationVersion + "\nKronius Productions (CC)";
 	}
 	
+	public static class FileNames{
+		public static final String FileName = ".IPCT2";
+		public static final String Version1FileName = ".ipctracker";
+		public static final String LogName = "IPCTracker.log";
+	}
+	
 	public static class CountryCodes{
 		public static final int SU = 1;
 		public static final int Ger = 2;

@@ -578,7 +578,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 
 	private void saveState() {
 		
-		String filePath = "Save1.ipctracker";
+		String filePath = "Save1" + IPCTrackerKeys.FileNames.FileName;
 		
 		int returnVal = fileChooser.showSaveDialog(mnuItemSave);
 		
@@ -587,8 +587,8 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
             
             filePath = file.getPath().trim();
             
-            if(!filePath.endsWith(".ipctracker")){
-    			filePath = filePath + ".ipctracker";
+            if(!filePath.endsWith(IPCTrackerKeys.FileNames.FileName)){
+    			filePath = filePath + IPCTrackerKeys.FileNames.FileName;
     		}
             
             logger.log(CLASS_NAME, "Saving: " + filePath + ".");
@@ -597,7 +597,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
             return;
         }
 		
-		IPCTrackerData dataToSave = new IPCTrackerData();
+		IPCTrackerDataV2 dataToSave = new IPCTrackerDataV2();
 		
 		dataToSave.setSUTotal(Integer.parseInt(lblTotalSU.getText().trim().substring(7, lblTotalSU.getText().trim().length())));
 		dataToSave.setGerTotal(Integer.parseInt(lblTotalGer.getText().trim().substring(7, lblTotalGer.getText().trim().length())));
@@ -687,22 +687,8 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		dataToSave.setTransactionHistoryUK(TransactionHistoryUK);
 		dataToSave.setTransactionHistoryJap(TransactionHistoryJap);
 		dataToSave.setTransactionHistoryUS(TransactionHistoryUS);
-				
-		FileOutputStream fos = null;
-		ObjectOutputStream out = null;
-				
-		try
-		{
-			fos = new FileOutputStream(filePath);
-		    out = new ObjectOutputStream(fos);
-		    out.writeObject(dataToSave);
-		    out.close();
-		}
-		catch(IOException ex)
-		{
-			ex.printStackTrace();
-		}
 		
+		IPCTrackerDataIO.SaveData(filePath, dataToSave);
 	}
 	
 	private void victoryCheck() {
@@ -983,7 +969,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		f.setVisible(true);
 		f.setResizable (false);
         
-		logger.setLogName("IPCTracker.log");
+		logger.setLogName(IPCTrackerKeys.FileNames.LogName);
         
         if(IPCTrackerKeys.DEBUG_STATUS){
         	logger.log(CLASS_NAME, "DEBUG: Frame Loaded");
@@ -1106,7 +1092,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	public static void main(String args[]){
 		
 		BasicLogger osLogger = BasicLogger.getInstance();
-		osLogger.setLogName("IPCTracker.log");
+		osLogger.setLogName(IPCTrackerKeys.FileNames.LogName);
 		
 		CLASS_NAME = IPCTrackerGui.class.getName();
 		
