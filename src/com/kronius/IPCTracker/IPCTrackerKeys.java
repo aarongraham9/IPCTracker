@@ -12,7 +12,7 @@ public class IPCTrackerKeys {
 		//TODO Change for production builds
 		public static final String ApplicationVersion = "2.0.0.0 Dev";
 		//TODO Change for production builds
-		public static final String ApplicationVersionReleaseDate = "August 16th, 2012";
+		public static final String ApplicationVersionReleaseDate = "August 31th, 2012";
 		
 		public static final String SovietUnion = "Soviet Union";
 		public static final String Germany = "Germany";
