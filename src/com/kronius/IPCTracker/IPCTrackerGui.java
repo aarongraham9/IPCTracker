@@ -674,6 +674,10 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
             
             filePath = file.getPath().trim();
             
+            if(filePath.endsWith(IPCTrackerKeys.FileNames.Version1FileName)){
+            	filePath = filePath.substring(0, filePath.length() - IPCTrackerKeys.FileNames.Version1FileName.length());
+            }
+            
             if(!filePath.endsWith(IPCTrackerKeys.FileNames.FileName)){
     			filePath = filePath + IPCTrackerKeys.FileNames.FileName;
     		}

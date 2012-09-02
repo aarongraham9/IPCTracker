@@ -1,6 +1,5 @@
 To-Do for version 2.0.0.0:
 
-CR013 - If file name is old version strip it away when saving.
 CR014 - Handle Exceptions (ie. Save / Load).
 CR015 - Have the file name passed in as an argument.
 CR016 - Change Date before production build.
@@ -21,6 +20,7 @@ CR009 - Columns for axis and allies with radio buttons for each city.
 CR010 - Do Victory Check on "Victory Check" button.
 CR011 - Save / Load new data for "Victory Check".
 CR012 - Add Reverse compatability.
+CR013 - If file name is old version strip it away when saving.
  
 Completed for version 1.0.0.0:
 
