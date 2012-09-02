@@ -78,13 +78,33 @@ public class IPCTrackerDataIO {
 			//Here parse v1LoadedData data into the loadedData object.
 			//Fill in the other loadedData with the defaults.
 			loadedData.setSUTotal(v1LoadedData.getSUTotal());
-			//etc
+			loadedData.setGerTotal(v1LoadedData.getGerTotal());
+			loadedData.setUKTotal(v1LoadedData.getUKTotal());
+			loadedData.setJapTotal(v1LoadedData.getJapTotal());
+			loadedData.setUSTotal(v1LoadedData.getUSTotal());
+			
+			loadedData.setTransactionHistorySU(v1LoadedData.getTransactionHistorySU());
+			loadedData.setTransactionHistoryGer(v1LoadedData.getTransactionHistoryGer());
+			loadedData.setTransactionHistoryUK(v1LoadedData.getTransactionHistoryUK());
+			loadedData.setTransactionHistoryJap(v1LoadedData.getTransactionHistoryJap());
+			loadedData.setTransactionHistoryUS(v1LoadedData.getTransactionHistoryUS());
 			
 			loadedData.setIsVictoryConditionNine(true);
-			//etc
+			
+			loadedData.setIsVictoryCityWashingtonAxis(false);
+			loadedData.setIsVictoryCityLondonAxis(false);
+			loadedData.setIsVictoryCityLeningradAxis(false);
+			loadedData.setIsVictoryCityMoscowAxis(false);
+			loadedData.setIsVictoryCityCalcuttaAxis(false);
+			loadedData.setIsVictoryCityLosAngelesAxis(false);
+			loadedData.setIsVictoryCityBerlinAxis(true);
+			loadedData.setIsVictoryCityParisAxis(true);
+			loadedData.setIsVictoryCityRomeAxis(true);
+			loadedData.setIsVictoryCityShanghaiAxis(true);
+			loadedData.setIsVictoryCityTokyoAxis(true);
 		}
 		else{
-			//Error
+			logger.log(CLASS_NAME, "ERROR: Unknown fileName returning empty object.");
 		}
 		
 		return loadedData;

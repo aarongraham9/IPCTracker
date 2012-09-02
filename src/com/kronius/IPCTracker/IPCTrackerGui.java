@@ -555,6 +555,112 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		taUK.setText(transHistUK.trim());
 		taJap.setText(transHistJap.trim());
 		taUS.setText(transHistUS.trim());
+		
+		boolean isVictoryConditionNine = loadedData.getIsVictoryConditionNine();
+		
+		boolean isVictoryCityWashingtonAxis = loadedData.getIsVictoryCityWashingtonAxis();
+		boolean isVictoryCityLondonAxis = loadedData.getIsVictoryCityLondonAxis();
+		boolean isVictoryCityLeningradAxis = loadedData.getIsVictoryCityLeningradAxis();
+		boolean isVictoryCityMoscowAxis = loadedData.getIsVictoryCityMoscowAxis();
+		boolean isVictoryCityCalcuttaAxis = loadedData.getIsVictoryCityCalcuttaAxis();
+		boolean isVictoryCityLosAngelesAxis = loadedData.getIsVictoryCityLosAngelesAxis();
+		boolean isVictoryCityBerlinAxis = loadedData.getIsVictoryCityBerlinAxis();
+		boolean isVictoryCityParisAxis = loadedData.getIsVictoryCityParisAxis();
+		boolean isVictoryCityRomeAxis = loadedData.getIsVictoryCityRomeAxis();
+		boolean isVictoryCityShanghaiAxis = loadedData.getIsVictoryCityShanghaiAxis();
+		boolean isVictoryCityManilaAxis = loadedData.getIsVictoryCityManilaAxis();
+		boolean isVictoryCityTokyoAxis = loadedData.getIsVictoryCityTokyoAxis();
+		
+		if(isVictoryConditionNine){
+			rdioBtnVictoryConditionNine.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryConditionTwelve.setSelected(true);
+		}
+		
+		if(isVictoryCityWashingtonAxis){
+			rdioBtnVictoryCityWashingtonAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityWashingtonAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityLondonAxis){
+			rdioBtnVictoryCityLondonAllies.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityLondonAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityLeningradAxis){
+			rdioBtnVictoryCityLeningradAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityLeningradAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityMoscowAxis){
+			rdioBtnVictoryCityMoscowAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityMoscowAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityCalcuttaAxis){
+		rdioBtnVictoryCityCalcuttaAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityCalcuttaAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityLosAngelesAxis){
+		rdioBtnVictoryCityLosAngelesAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityLosAngelesAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityBerlinAxis){
+		rdioBtnVictoryCityBerlinAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityBerlinAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityParisAxis){
+		rdioBtnVictoryCityParisAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityParisAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityRomeAxis){
+		rdioBtnVictoryCityRomeAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityRomeAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityShanghaiAxis){
+		rdioBtnVictoryCityShanghaiAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityShanghaiAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityManilaAxis){
+		rdioBtnVictoryCityManilaAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityManilaAllies.setSelected(true);
+		}
+		
+		if(isVictoryCityTokyoAxis){
+		rdioBtnVictoryCityTokyoAxis.setSelected(true);
+		}
+		else{
+			rdioBtnVictoryCityTokyoAllies.setSelected(true);
+		}
 	}
 
 	private void saveState() {
