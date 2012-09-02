@@ -1,10 +1,9 @@
 To-Do for version 2.0.0.0:
 
-CR011 - Save / Load new data for "Victory Check".
-CR012 - Add Reverse compatability.
 CR013 - Handle Exceptions (ie. Save / Load).
-CR014 - Change Date before production build.
-CR015 - Change version number before production build.
+CR014 - Have the file name passed in as an argument.
+CR015 - Change Date before production build.
+CR016 - Change version number before production build.
 
 Completed for version 2.0.0.0:
 
@@ -17,6 +16,8 @@ CR007 - Button for victory check.
 CR008 - Radio buttons for 9 / 12 city victory.
 CR009 - Columns for axis and allies with radio buttons for each city.
 CR010 - Do Victory Check on "Victory Check" button.
+CR011 - Save / Load new data for "Victory Check".
+CR012 - Add Reverse compatability.
  
 Completed for version 1.0.0.0:
 
