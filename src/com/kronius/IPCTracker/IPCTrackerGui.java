@@ -1202,6 +1202,10 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		
 		CLASS_NAME = IPCTrackerGui.class.getName();
 		
+		for(String s: args){
+			osLogger.log(CLASS_NAME, "Arg: \"" + s + "\"");
+		}
+		
 		osLogger.log(CLASS_NAME, "Application Version: " + IPCTrackerKeys.Strings.ApplicationVersion);
 		
 		OS = System.getProperty("os.name");
