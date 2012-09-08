@@ -152,7 +152,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 	
 	private int MENU_MASK = Toolkit.getDefaultToolkit().getMenuShortcutKeyMask();
 		
-	private IPCTrackerGui(){		
+	private IPCTrackerGui() {
 		
 		f = new JFrame(IPCTrackerKeys.Strings.AppNameFull);
 		
@@ -416,10 +416,11 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 				logger.log(CLASS_NAME, "DEBUG: Showing About Message");
 			}
 			JOptionPane.showMessageDialog(f, IPCTrackerKeys.Strings.AboutMessage, IPCTrackerKeys.Strings.AboutMessageTitle, 
-					0, new ImageIcon("res" + File.separator + "Illuminati.png"));
+					0, new ImageIcon(IPCTrackerKeys.FileNames.IconAbout));
 		}else{
 			logger.log(CLASS_NAME, "Showing Unknown event Message" + e.getSource().toString());
-			JOptionPane.showMessageDialog(f, "ERROR: Unknown event.", "Error!", 0, new ImageIcon("res" + File.separator + "error.png"));
+			JOptionPane.showMessageDialog(f, "ERROR: Unknown event.", 
+					"Error!", 0, new ImageIcon(IPCTrackerKeys.FileNames.IconError));
 		}
 	}
 	
@@ -840,28 +841,28 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 			numberOfAxisControlledCities++;
 		}
 		
-		String sideThatWon = "Axis";
+		String sideThatWon = IPCTrackerKeys.VictoryStrings.Axis;
 		int numberOfAlliesControlledCities = 12 - numberOfAxisControlledCities;
-		String icon = "avatar_gr_icon.gif";
+		String icon = IPCTrackerKeys.FileNames.IconAxis;
 		
 		if(isVictoryConditionNine){
 			if(numberOfAxisControlledCities > 8){
-				sideThatWon = "Axis";
-				icon = "avatar_gr_icon.gif";
+				sideThatWon = IPCTrackerKeys.VictoryStrings.Axis;
+				icon = IPCTrackerKeys.FileNames.IconAxis;
 			}else if(numberOfAxisControlledCities < 4){
-				sideThatWon = "Allies";
-				icon = "avatar_usa_icon.gif";
+				sideThatWon = IPCTrackerKeys.VictoryStrings.Allies;
+				icon = IPCTrackerKeys.FileNames.IconAllies;
 			}
 			else{
 				return; //If there is no winner do nothing.
 			}
 		}else{
 			if(numberOfAxisControlledCities > 11){
-				sideThatWon = "Axis";
-				icon = "avatar_gr_icon.gif";
+				sideThatWon = IPCTrackerKeys.VictoryStrings.Axis;
+				icon = IPCTrackerKeys.FileNames.IconAxis;
 			}else if (numberOfAxisControlledCities < 1){
-				sideThatWon = "Allies";
-				icon = "avatar_usa_icon.gif";
+				sideThatWon = IPCTrackerKeys.VictoryStrings.Allies;
+				icon = IPCTrackerKeys.FileNames.IconAllies;
 			}
 			else{
 				return; //If there is no winner do nothing.
@@ -869,10 +870,14 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		}
 		
 		//TODO Put this stuff in keys
-		JOptionPane.showMessageDialog(f, sideThatWon + " Wins!\nWith a score of:\n"
-				+ numberOfAxisControlledCities + " cities for Axis\nand:\n"
-				+ numberOfAlliesControlledCities + " cities for Allies" , sideThatWon
-				+ " Wins!", 0, new ImageIcon("res" + File.separator + icon));
+		JOptionPane.showMessageDialog(f, sideThatWon + 
+				IPCTrackerKeys.Strings.VictoryCheckMessage1
+				+ numberOfAxisControlledCities + 
+				IPCTrackerKeys.Strings.VictoryCheckMessage2
+				+ numberOfAlliesControlledCities + 
+				IPCTrackerKeys.Strings.VictoryCheckMessage3 , sideThatWon
+				+ IPCTrackerKeys.Strings.VictoryCheckMessageTitleSuffix, 
+				0, new ImageIcon(icon));
 	}
 	
 	private void updateTotals() {
@@ -1219,7 +1224,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		else if(OS.startsWith(IPCTrackerKeys.OS.Win)){
 			osLogger.log(CLASS_NAME, "Current OS is: " + IPCTrackerKeys.OS.Win);
 			//Windows specific properties
-			winsowsApplicationIcon = Toolkit.getDefaultToolkit().getImage("res/AppIcon.png");
+			winsowsApplicationIcon = Toolkit.getDefaultToolkit().getImage(IPCTrackerKeys.FileNames.IconWin);
 		}else{
 			//Linux or unkown
 			osLogger.log(CLASS_NAME, "Current OS is: " + OS);

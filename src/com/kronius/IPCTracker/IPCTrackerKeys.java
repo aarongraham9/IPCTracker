@@ -1,5 +1,7 @@
 package com.kronius.IPCTracker;
 
+import java.io.File;
+
 public class IPCTrackerKeys {
 	
 	//TODO Change for production builds
@@ -43,12 +45,22 @@ public class IPCTrackerKeys {
 		public static final String AboutMessageTitle = "About " + AppName;
 		public static final String AboutMessage = "Created by Aaron Graham (aarongraham9@gmail.com).\n"
 		 + ApplicationVersionReleaseDate + ".\nVersion " + ApplicationVersion + "\nKronius Productions (CC)";
+		
+		public static final String VictoryCheckMessageTitleSuffix = " Win!";
+		public static final String VictoryCheckMessage1 = " Win!\nWith a score of:\n";
+		public static final String VictoryCheckMessage2 = " cities for Axis\nand:\n";
+		public static final String VictoryCheckMessage3 = " cities for Allies";
 	}
 	
 	public static class FileNames{
 		public static final String FileName = ".IPCT2";
 		public static final String Version1FileName = ".ipctracker";
 		public static final String LogName = "IPCTracker.log";
+		public static final String IconAxis = "res" + File.separator + "avatar_gr_icon.gif";
+		public static final String IconAllies = "res" + File.separator + "avatar_usa_icon.gif";
+		public static final String IconError = "res" + File.separator + "error.png";
+		public static final String IconAbout = "res" + File.separator + "Illuminati.png";
+		public static final String IconWin = "res" + File.separator + "AppIcon.png";
 	}
 	
 	public static class CountryCodes{
