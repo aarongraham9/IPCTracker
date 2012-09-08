@@ -8,7 +8,6 @@ CR023 - Build Production V2.0.0.0 for Windows
 
 To-Do for version 2.0.0.0:
 
-CR017 - Build Production V2.0.0.0 for Mac OS X
 CR018 - Build Production V2.0.0.0 for Windows
 
 Completed for version 2.0.0.0:
@@ -28,6 +27,7 @@ CR013 - If file name is old version strip it away when saving.
 CR014 - Handle Exceptions (ie. Save / Load).
 CR015 - Change Date before production build.
 CR016 - Change version number before production build.
+CR017 - Build Production V2.0.0.0 for Mac OS X
  
 Completed for version 1.0.0.0:
 
