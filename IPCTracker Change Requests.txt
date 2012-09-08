@@ -1,11 +1,13 @@
 To-Do for version 3.0.0.0:
 
 CR019 - Have the file name passed in as an argument.
+CR020 - Change Date before production build.
+CR021 - Change version number before production build.
+CR022 - Build Production V2.0.0.0 for Mac OS X
+CR023 - Build Production V2.0.0.0 for Windows
 
 To-Do for version 2.0.0.0:
 
-CR015 - Change Date before production build.
-CR016 - Change version number before production build.
 CR017 - Build Production V2.0.0.0 for Mac OS X
 CR018 - Build Production V2.0.0.0 for Windows
 
@@ -24,6 +26,8 @@ CR011 - Save / Load new data for "Victory Check".
 CR012 - Add Reverse compatability.
 CR013 - If file name is old version strip it away when saving.
 CR014 - Handle Exceptions (ie. Save / Load).
+CR015 - Change Date before production build.
+CR016 - Change version number before production build.
  
 Completed for version 1.0.0.0:
 

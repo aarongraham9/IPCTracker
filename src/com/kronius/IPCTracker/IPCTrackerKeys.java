@@ -5,16 +5,16 @@ import java.io.File;
 public class IPCTrackerKeys {
 	
 	//TODO Change for production builds
-	public static final boolean DEBUG_STATUS = true;
+	public static final boolean DEBUG_STATUS = false;
 	
 	public static class Strings{
 		public static final String AppName = "IPC Tracker";
 		public static final String AppNameFull = "IPC Tracker for Axis & Allies: Spring 1942";
 		
 		//TODO Change for production builds
-		public static final String ApplicationVersion = "2.0.0.0 Dev";
+		public static final String ApplicationVersion = "2.0.0.0";
 		//TODO Change for production builds
-		public static final String ApplicationVersionReleaseDate = "August 31th, 2012";
+		public static final String ApplicationVersionReleaseDate = "September 8th, 2012";
 		
 		public static final String SovietUnion = "Soviet Union";
 		public static final String Germany = "Germany";
