@@ -419,7 +419,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 					0, new ImageIcon("res" + File.separator + "Illuminati.png"));
 		}else{
 			logger.log(CLASS_NAME, "Showing Unknown event Message" + e.getSource().toString());
-			JOptionPane.showMessageDialog(f, "Unknown event: " + e.getSource().toString(), "Error", 0, new ImageIcon("res" + File.separator + "error.png"));
+			JOptionPane.showMessageDialog(f, "ERROR: Unknown event.", "Error!", 0, new ImageIcon("res" + File.separator + "error.png"));
 		}
 	}
 	
@@ -718,7 +718,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		    } // end while 
 		} // end try
 		catch (IOException e) {
-			System.err.println("Error: " + e);
+			logger.log(CLASS_NAME, "ERROR: " + e.getMessage());
 		}
 		
 		reader = "";
@@ -731,7 +731,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		    } // end while 
 		} // end try
 		catch (IOException e) {
-			System.err.println("Error: " + e);
+			logger.log(CLASS_NAME, "ERROR: " + e.getMessage());System.err.println("Error: " + e);
 		}
 		
 		reader = "";
@@ -744,7 +744,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		    } // end while 
 		} // end try
 		catch (IOException e) {
-			System.err.println("Error: " + e);
+			logger.log(CLASS_NAME, "ERROR: " + e.getMessage());
 		}
 		
 		reader = "";
@@ -757,7 +757,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		    } // end while 
 		} // end try
 		catch (IOException e) {
-			System.err.println("Error: " + e);
+			logger.log(CLASS_NAME, "ERROR: " + e.getMessage());
 		}
 		
 		reader = "";
@@ -770,7 +770,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 		    } // end while 
 		} // end try
 		catch (IOException e) {
-			System.err.println("Error: " + e);
+			logger.log(CLASS_NAME, "ERROR: " + e.getMessage());
 		}
 		
 		dataToSave.setTransactionHistorySU(TransactionHistorySU);
@@ -868,6 +868,7 @@ public class IPCTrackerGui implements ActionListener, KeyListener{
 			}
 		}
 		
+		//TODO Put this stuff in keys
 		JOptionPane.showMessageDialog(f, sideThatWon + " Wins!\nWith a score of:\n"
 				+ numberOfAxisControlledCities + " cities for Axis\nand:\n"
 				+ numberOfAlliesControlledCities + " cities for Allies" , sideThatWon

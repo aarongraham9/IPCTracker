@@ -1,11 +1,13 @@
+To-Do for version 3.0.0.0:
+
+CR019 - Have the file name passed in as an argument.
+
 To-Do for version 2.0.0.0:
 
-CR014 - Handle Exceptions (ie. Save / Load).
-CR015 - Have the file name passed in as an argument.
-CR016 - Change Date before production build.
-CR017 - Change version number before production build.
-CR018 - Build Production V2.0.0.0 for Mac OS X
-CR019 - Build Production V2.0.0.0 for Windows
+CR015 - Change Date before production build.
+CR016 - Change version number before production build.
+CR017 - Build Production V2.0.0.0 for Mac OS X
+CR018 - Build Production V2.0.0.0 for Windows
 
 Completed for version 2.0.0.0:
 
@@ -21,6 +23,7 @@ CR010 - Do Victory Check on "Victory Check" button.
 CR011 - Save / Load new data for "Victory Check".
 CR012 - Add Reverse compatability.
 CR013 - If file name is old version strip it away when saving.
+CR014 - Handle Exceptions (ie. Save / Load).
  
 Completed for version 1.0.0.0:
 

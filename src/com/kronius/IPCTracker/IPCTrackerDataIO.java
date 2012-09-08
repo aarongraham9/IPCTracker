@@ -50,11 +50,11 @@ public class IPCTrackerDataIO {
 		    }
 		    catch(IOException ex)
 		    {
-		    	ex.printStackTrace();
+		    	logger.log(CLASS_NAME, "ERROR: " + ex.getMessage());
 		    }
 		    catch(ClassNotFoundException ex)
 		    {
-		    	ex.printStackTrace();
+		    	logger.log(CLASS_NAME, "ERROR: " + ex.getMessage());
 		    }
 			
 		}else if (path.endsWith(IPCTrackerKeys.FileNames.Version1FileName)){
@@ -68,11 +68,11 @@ public class IPCTrackerDataIO {
 		    }
 		    catch(IOException ex)
 		    {
-		    	ex.printStackTrace();
+		    	logger.log(CLASS_NAME, "ERROR: " + ex.getMessage());
 		    }
 		    catch(ClassNotFoundException ex)
 		    {
-		    	ex.printStackTrace();
+		    	logger.log(CLASS_NAME, "ERROR: " + ex.getMessage());
 		    }
 			
 			//Here parse v1LoadedData data into the loadedData object.
