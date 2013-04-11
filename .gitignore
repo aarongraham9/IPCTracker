@@ -1,0 +1,12 @@
+
+.DS_Store
+
+src/com/.DS_Store
+
+src/.DS_Store
+
+src/com/kronius/.DS_Store
+
+*.class
+
+*.log
